@@ -2,15 +2,35 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>A-Frame Aframe Multi Video Component Component - Basic</title>
+    <title>A-Frame Multi Video Component Component - Basic</title>
     <meta name="description" content="Basic example for Aframe Multi Video Component component."></meta>
-    <script src="https://aframe.io/releases/0.6.0/aframe.min.js"></script>
-    <script src="../../dist/aframe-aframe-multi-video-component-component.min.js"></script>
+    <script src="https://aframe.io/releases/0.7.1/aframe.min.js"></script>
+    <script src="../../dist/aframe-multi-video-component-component.min.js"></script>
     <script src="https://unpkg.com/aframe-environment-component@1.0.0/dist/aframe-environment-component.min.js"></script>
   </head>
   <body>
-    <a-scene environment="preset: forest">
-      <a-entity aframe-multi-video-component=""></a-entity>
+    <!-- <a-scene id="scene" environment="preset: forest"> -->
+      <a-scene id="scene" environment="preset: starry;">
+
+      <a-assets>
+        <video id="video1" loop crossorigin="anonymous" webkit-playsinline playsinline>
+            <source src="./assets/star_wars_opening_scene.mp4"></source>
+        </video>
+      </a-assets>
+
+      <!-- <a-entity aframe-multi-video-component=""></a-entity> -->
+      <a-plane id="videoplane" geometry="buffer: false" position="3 1 -5" rotation="0 0 0" width="3" height="3" aframe-multi-video-component="src: #video1; time: 150; volume: 0.5; autoplay:true;"></a-plane>
+
+      <a-plane id="videoplane2" geometry="buffer: false" position="-3 1 -5" rotation="0 0 0" width="3" height="3" aframe-multi-video-component="src: #video1; time: 50; volume: 0.5; autoplay:true;"></a-plane>
+
+      <a-plane id="videoplane3" geometry="buffer: false" position="10 1 -10" rotation="0 0 0" width="3" height="3" aframe-multi-video-component="src: #video1; time: 250; volume: 0.5; autoplay:true;"></a-plane>
+
+      <a-plane id="videoplane4" geometry="buffer: false" position="-10 1 -10" rotation="0 0 0" width="3" height="3" aframe-multi-video-component="src: #video1; time: 350; volume: 0.5; autoplay:true;"></a-plane>
+
+      <a-plane id="videoplane5" geometry="buffer: false" position="20 1 -15" rotation="0 0 0" width="3" height="3" aframe-multi-video-component="src: #video1; time: 0; volume: 0.5; autoplay:true;"></a-plane>
+
+      <a-plane id="videoplane6" geometry="buffer: false" position="-20 1 -15" rotation="0 0 0" width="3" height="3" aframe-multi-video-component="src: #video1; time: 200; volume: 0.5; autoplay:true;"></a-plane>
+
     </a-scene>
 
     <!-- GitHub Corner. -->
