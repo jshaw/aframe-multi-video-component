@@ -12,7 +12,11 @@ For [A-Frame](https://aframe.io).
 
 | Property | Description | Default Value |
 | -------- | ----------- | ------------- |
-|          |             |               |
+| src      |             |               |
+| time     |             |               |
+| duration |             |               |
+| volume   |             |               |
+| autoplay |             |               |
 
 ### Installation
 
@@ -29,6 +33,11 @@ Install and use by directly including the [browser files](dist):
 
 <body>
   <a-scene>
+    <a-assets>
+        <video id="video1" loop crossorigin="anonymous" webkit-playsinline playsinline>
+            <source src="./assets/star_wars_opening_scene.mp4"></source>
+        </video>
+    </a-assets>
     <a-entity aframe-multi-video-component="src: #video1; time: 200; duration: 5; volume: 0.5; autoplay:true;"></a-entity>
   </a-scene>
 </body>
