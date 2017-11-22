@@ -29,7 +29,7 @@ Install and use by directly including the [browser files](dist):
 
 <body>
   <a-scene>
-    <a-entity aframe-multi-video-component="foo: bar"></a-entity>
+    <a-entity aframe-multi-video-component="src: #video1; time: 200; duration: 5; volume: 0.5; autoplay:true;"></a-entity>
   </a-scene>
 </body>
 ```
