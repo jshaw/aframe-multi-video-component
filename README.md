@@ -5,6 +5,8 @@
 
 AFRAME multi-video component allowing for using a single video source organized like an image sprite as textures on multiple geometries each starting at different times in the video source.
 
+![alt text](https://raw.githubusercontent.com/jshaw/aframe-multi-video-component/master/examples/basic/assets/multi-video-component-gif.gif "multi-video screenshot")
+
 This is a component to help optimize webVR video displays. Instead of loading multiple video sources for each panel and having the browser have to handle and use computational resources for keeping track of these multiple video files this is a solution to get better performance by editing the video clips into a single video, loading a single video file, cloning the video source for each panel and playing the video clip within the start time for the specified duration of the video clip. 
 
 ##### Note
