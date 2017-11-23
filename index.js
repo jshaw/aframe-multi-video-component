@@ -54,21 +54,30 @@ AFRAME.registerComponent('aframe-multi-video-component', {
     this.video.currentTime = this.time;
     this.video.volume = this.volume;
 
-    if(this.autoplay == true){
+    if(this.autoplay == true && !AFRAME.utils.device.isMobile()){
       this.video.play();
     }
 
     el.setObject3D('mesh', mesh);
 
+    this.attachEvents();
     this.updateCombinedTime();
 
     var ontimeupdate_handler = this.ontimeupdateHandler.bind(this);
     this.video.ontimeupdate = ontimeupdate_handler;
     this.vid_length = 0;
 
-
+    // Waits for video to load to set the video clip total duration (length)
     var video_ready_interval_handler = this.videoReadyIntervalHandler.bind(this);
     this.i = setInterval(video_ready_interval_handler, 200);
+  },
+
+  attachEvents: function() {
+    var play_event_handler = this.playVideo.bind(this)
+    this.el.addEventListener('play-video', play_event_handler);
+
+    var pause_event_handler = this.pauseVideo.bind(this)
+    this.el.addEventListener('pause-video', pause_event_handler);
   },
 
   ontimeupdateHandler: function() {
@@ -110,9 +119,16 @@ AFRAME.registerComponent('aframe-multi-video-component', {
     }
   },
 
-  
   updateCombinedTime: function() {
     this.combined_time = this.time + this.duration;
+  },
+
+  playVideo: function() {
+    this.video.play();
+  },
+
+  pauseVideo: function() {
+    this.video.pause();
   },
 
   /**

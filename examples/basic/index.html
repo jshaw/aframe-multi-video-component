@@ -2,34 +2,80 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>A-Frame Multi Video Component Component - Basic</title>
+    <title>A-Frame Multi Video Component - Basic</title>
     <meta name="description" content="Basic example for Aframe Multi Video Component component."></meta>
+    <meta name="apple-mobile-web-app-capable" content="yes">
     <script src="https://aframe.io/releases/0.7.1/aframe.min.js"></script>
     <script src="../../dist/aframe-multi-video-component.min.js"></script>
     <script src="https://unpkg.com/aframe-environment-component@1.0.0/dist/aframe-environment-component.min.js"></script>
+
+    <style>
+      #video-permission {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(13,13,13,1);
+        background: -moz-linear-gradient(left, rgba(13,13,13,1) 0%, rgba(13,13,13,1) 1%, rgba(13,13,13,1) 86%, rgba(13,13,13,1) 100%);
+        background: -webkit-linear-gradient(left, rgba(13,13,13,1) 0%, rgba(13,13,13,1) 1%, rgba(13,13,13,1) 86%, rgba(13,13,13,1) 100%);
+        background: -o-linear-gradient(left, rgba(13,13,13,1) 0%, rgba(13,13,13,1) 1%, rgba(13,13,13,1) 86%, rgba(13,13,13,1) 100%);
+        background: -ms-linear-gradient(left, rgba(13,13,13,1) 0%, rgba(13,13,13,1) 1%, rgba(13,13,13,1) 86%, rgba(13,13,13,1) 100%);
+        background: linear-gradient(to right, rgba(13,13,13,1) 0%, rgba(13,13,13,1) 1%, rgba(13,13,13,1) 86%, rgba(13,13,13,1) 100%);
+        z-index: 10000;
+        display: none;
+
+      }
+
+      #video-permission-button {
+        position: relative;
+        display: inline-block;
+        width: auto;
+        margin-top: 50px;
+        height: auto;
+        overflow: hidden;
+      }
+
+      #button_container img {
+        max-width:70%;
+        height:70%;
+        padding-top: 100px;
+      }
+
+      #button_container {
+        display: table;
+        margin: 0 auto;
+      }
+
+    </style>
   </head>
   <body>
-    <!-- <a-scene id="scene" environment="preset: forest"> -->
+      
+      <div id="video-permission">
+          <div id="button_container">
+            <button id="video-permission-button">Press to Play</button>
+          </div>
+      </div>
+
       <a-scene id="scene" environment="preset: starry;">
 
       <a-assets>
-        <video id="video1" loop crossorigin="anonymous" webkit-playsinline playsinline>
+        <video id="video1" loop crossorigin="anonymous" webkit-playsinline playsinline preload="true">
             <source src="./assets/star_wars_opening_scene.mp4"></source>
         </video>
       </a-assets>
 
-      <!-- <a-entity aframe-multi-video-component=""></a-entity> -->
-      <a-plane id="videoplane" geometry="buffer: false" position="3 1 -5" rotation="0 0 0" width="3" height="3" aframe-multi-video-component="src: #video1; time: 150; duration: 10; volume: 0.5; autoplay:true;"></a-plane>
+      <a-plane class="video_plane" id="videoplane" geometry="buffer: false" position="3 1 -5" rotation="0 0 0" width="3" height="3" aframe-multi-video-component="src: #video1; time: 150; duration: 10; volume: 0.5; autoplay:true;"></a-plane>
 
-      <a-plane id="videoplane2" geometry="buffer: false" position="-3 1 -5" rotation="0 0 0" width="3" height="3" aframe-multi-video-component="src: #video1; time: 50; duration: 10; volume: 0.5; autoplay:true;"></a-plane>
+      <a-plane class="video_plane" id="videoplane2" geometry="buffer: false" position="-3 1 -5" rotation="0 0 0" width="3" height="3" aframe-multi-video-component="src: #video1; time: 50; duration: 10; volume: 0.5; autoplay:true;"></a-plane>
 
-      <a-plane id="videoplane3" geometry="buffer: false" position="10 1 -10" rotation="0 0 0" width="3" height="3" aframe-multi-video-component="src: #video1; time: 250; duration: 10; volume: 0.5; autoplay:true;"></a-plane>
+      <a-plane class="video_plane" id="videoplane3" geometry="buffer: false" position="10 1 -10" rotation="0 0 0" width="3" height="3" aframe-multi-video-component="src: #video1; time: 250; duration: 10; volume: 0.5; autoplay:true;"></a-plane>
 
-      <a-plane id="videoplane4" geometry="buffer: false" position="-10 1 -10" rotation="0 0 0" width="3" height="3" aframe-multi-video-component="src: #video1; time: 350; duration: 10; volume: 0.5; autoplay:true;"></a-plane>
+      <a-plane class="video_plane" id="videoplane4" geometry="buffer: false" position="-10 1 -10" rotation="0 0 0" width="3" height="3" aframe-multi-video-component="src: #video1; time: 350; duration: 10; volume: 0.5; autoplay:true;"></a-plane>
 
-      <a-plane id="videoplane5" geometry="buffer: false" position="20 1 -15" rotation="0 0 0" width="3" height="3" aframe-multi-video-component="src: #video1; time: 0; duration: 10; volume: 0.5; autoplay:true;"></a-plane>
+      <a-plane class="video_plane" id="videoplane5" geometry="buffer: false" position="20 1 -15" rotation="0 0 0" width="3" height="3" aframe-multi-video-component="src: #video1; time: 0; duration: 10; volume: 0.5; autoplay:true;"></a-plane>
 
-      <a-plane id="videoplane6" geometry="buffer: false" position="-20 1 -15" rotation="0 0 0" width="3" height="3" aframe-multi-video-component="src: #video1; time: 200; duration: 5; volume: 0.5; autoplay:true;"></a-plane>
+      <a-plane class="video_plane" id="videoplane6" geometry="buffer: false" position="-20 1 -15" rotation="0 0 0" width="3" height="3" aframe-multi-video-component="src: #video1; time: 200; duration: 5; volume: 0.5; autoplay:true;"></a-plane>
 
     </a-scene>
 
@@ -41,5 +87,37 @@
     </a>
     <style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
     <!-- End GitHub Corner. -->
+
+    <script>
+
+      /**
+      * MOBILE PATCH TO PLAY VIDEO on Mobile
+      */
+      function _mobileFriendly() {
+          if (AFRAME.utils.device.isMobile()) {
+              var that = this;
+              let video_permission        = document.getElementById('video-permission');
+              let video_permission_button = document.getElementById('video-permission-button');
+              let singlevideo = document.getElementById("video1");
+
+              video_permission.style.display = 'block';
+              video_permission_button.addEventListener("click", function() {
+              video_permission.style.display = 'none';
+
+              var sceneEl = document.querySelector('a-scene');
+              var planes = sceneEl.querySelectorAll('.video_plane');
+
+              for (var i = 0; i < planes.length; i++) {
+                planes[i].emit('play-video');
+              }
+
+            }, false);
+          }
+      }
+
+      _mobileFriendly();
+
+
+    </script>
   </body>
 </html>
