@@ -1,12 +1,12 @@
 {
-  "name": "aframe-multi-video-component-component",
+  "name": "aframe-multi-video-component",
   "version": "1.1.2",
   "description": "AFRAME multi-video component allowing for using a single video source organized like an image sprite as textures on multiple geometries each starting at different times in the video source.",
   "main": "index.js",
-  "unpkg": "dist/aframe-multi-video-component-component.min.js",
+  "unpkg": "dist/aframe-multi-video-component.min.js",
   "scripts": {
-    "dev": "budo index.js:dist/aframe-multi-video-component-component.min.js --port 7000 --live --open",
-    "dist": "webpack index.js dist/aframe-multi-video-component-component.js && webpack -p index.js dist/aframe-multi-video-component-component.min.js",
+    "dev": "budo index.js:dist/aframe-multi-video-component.min.js --port 7000 --live --open",
+    "dist": "webpack index.js dist/aframe-multi-video-component.js && webpack -p index.js dist/aframe-multi-video-component.min.js",
     "lint": "semistandard -v | snazzy",
     "prepublish": "npm run dist",
     "ghpages": "ghpages",
