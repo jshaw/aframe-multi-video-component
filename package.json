@@ -1,6 +1,6 @@
 {
   "name": "aframe-multi-video-component",
-  "version": "1.1.2",
+  "version": "2.0.0",
   "description": "AFRAME multi-video component allowing for using a single video source organized like an image sprite as textures on multiple geometries each starting at different times in the video source.",
   "main": "index.js",
   "unpkg": "dist/aframe-multi-video-component.min.js",
