@@ -124,6 +124,9 @@
 
 	    var pause_event_handler = this.pauseVideo.bind(this)
 	    this.el.addEventListener('pause-video', pause_event_handler);
+
+	    var stop_event_handler = this.stopVideo.bind(this)
+	    this.el.addEventListener('stop-video', stop_event_handler);
 	  },
 
 	  ontimeupdateHandler: function() {
@@ -175,6 +178,10 @@
 
 	  pauseVideo: function() {
 	    this.video.pause();
+	  },
+
+	  stopVideo: function() {
+	    this.video.stop();
 	  },
 
 	  /**
