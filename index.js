@@ -11,10 +11,10 @@ AFRAME.registerComponent('aframe-multi-video-component', {
   dependencies: ['geometry'],
   schema: {
     src: {type: 'string'},
-    time: {type: 'number'},
+    time: {type: 'number', default: 0},
     duration: {type: 'number'},
-    volume: {type: 'number'},
-    autoplay: {type: 'boolean'}
+    volume: {type: 'number', default: 0.5},
+    autoplay: {type: 'boolean', default: false}
   },
 
   /**
