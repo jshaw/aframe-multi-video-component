@@ -11,7 +11,7 @@ This is a component to help optimize webVR video displays. Instead of loading mu
 This component is a exploratory solution for optimizing multi-video clips on multiple plane geometries used as video displays in the VR world. There were performance issues doing this on the Samsung VR while using multiple video sources so this was used to make this a viable solution for webVR on mobile devices.
 
 
-For [A-Frame](https://aframe.io).
+For [A-Frame](https://aframe.io). The aframe-multi-video-component was developed at [UNION Creative](http://unioncreative.com) for a webVR project.
 
 ### API
 
